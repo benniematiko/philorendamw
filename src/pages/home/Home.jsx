@@ -8,7 +8,7 @@ import Block2 from "../../assets/block2.png";
 import Cabros from "../../assets/cabros.png";
 import Colors from "../../assets/colors.png";
 import Culvert from "../../assets/culvert.png";
-import Loover from "../../assets/Loover.png";
+import Loover from "../../assets/loover.png";
 import Paving from "../../assets/paving.png";
 import Table from "../../assets/table.png";
 import FeedMix from "../../assets/feedmix.png";

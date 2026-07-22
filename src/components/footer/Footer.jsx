@@ -11,7 +11,9 @@ const Footer = () => {
         {/* Brand & Corporate Statement Column */}
         <div className="footer-brand-col">
           <div className="footer-logo">
-            Philorenda Metal Works<span className="accent-dot">.</span>
+            <div className="logo-main-text">
+              Philorenda Metal Works<span className="accent-dot">.</span>
+            </div>
             <span className="logo-subtext">FABRICATION</span>
           </div>
           <p className="corporate-statement">
