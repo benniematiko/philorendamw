@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Home.css - Complete Landing Page Stylesheet
+   Home.css - Cleaned & Optimized Landing Page Stylesheet
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -14,6 +14,7 @@
   
   --bg-main: #ffffff;
   --bg-surface: #ffffff;
+  --bg-catalog: #f8fafc;
   --bg-dark-footer: #0a0f1d;
   --bg-glass: rgba(255, 255, 255, 0.85);
 
@@ -27,8 +28,7 @@
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-card-normal: 0 2px 8px rgba(0, 0, 0, 0.06);
-  --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.12); /* Faint soft shadow on hover */
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
 
   /* Typography */
   --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -85,7 +85,8 @@ img {
 /* --------------------------------------------------------------------------
    3. Container & Layout Helpers
    -------------------------------------------------------------------------- */
-.home-container, .section-container {
+.home-container, 
+.section-container {
   width: 100%;
   max-width: var(--container-max-width);
   margin: 0 auto;
@@ -146,33 +147,160 @@ img {
 /* --------------------------------------------------------------------------
    5. Hero Section
    -------------------------------------------------------------------------- */
+
+
+/* Ensure the hero fills the viewport properly without pushing under the fixed nav */
 .hero-section {
-  padding-top: calc(var(--header-height) + 64px);
-  padding-bottom: 96px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  position: relative;
+  width: 100%;
+  /* Use min-height so content never gets cut off on mobile screens */
+  min-height: calc(100vh - var(--header-height)); 
+  
+  /* Account for fixed navbar height */
+  margin-top: var(--header-height); 
+  
+  /* Flexbox centering */
+  display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+  
+  /* Background Image Setup */
+  background-image: url('../../assets/colors.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  
+  /* Prevent background bleed */
+  overflow: hidden; 
+}
+
+/* Dark contrast overlay over the image */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.65); /* Soft dark overlay for text legibility */
+  z-index: 1;
+}
+
+/* Lift text container above the dark overlay */
+.hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(234, 88, 12, 0.15);
+  border: 1px solid var(--primary-color);
+  color: #fdba74;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.badge-pulse {
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.7);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(234, 88, 12, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0); }
 }
 
 .hero-title {
-  font-size: 3.5rem;
-  letter-spacing: -0.03em;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  letter-spacing: -0.02em;
   margin-bottom: 20px;
+  color: var(--text-white);
 }
 
-.hero-description {
-  font-size: 1.2rem;
-  color: var(--text-muted);
+/* Fixed Class Mapping from JSX (.hero-subtitle) */
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #94a3b8;
   margin-bottom: 36px;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary, 
+.btn-secondary {
+  padding: 12px 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: all var(--transition-fast);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--text-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--text-white);
 }
 
 /* --------------------------------------------------------------------------
-   6. Flat Products Catalog Section (No Section Background & Static Cards)
+   6. Products Catalog Section
    -------------------------------------------------------------------------- */
 .catalog-section {
   padding: 5rem 1.5rem;
-  background: whitesmoke;
+  background-color: var(--bg-catalog);
   color: var(--text-main);
 }
 
@@ -195,14 +323,14 @@ img {
   margin-top: 0.5rem;
 }
 
-/* Grid Layout */
+/* Responsive Grid */
 .product-cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
 }
 
-/* Product Card - Static (No Transform / Shift on Hover) */
+/* Product Card - Clean Static Card */
 .product-card {
   background-color: var(--bg-surface);
   border: 1px solid var(--border-color);
@@ -212,15 +340,11 @@ img {
   flex-direction: column;
   color: var(--text-main);
   box-shadow: var(--shadow-card-normal);
-  transition: box-shadow var(--transition-normal); /* Smooth shadow transition only */
-  transform: none !important; /* Forces zero movement */
+  transition: box-shadow var(--transition-normal);
 }
 
-/* Card Hover State - Mild Shadow Only, No Border Shift */
 .product-card:hover {
-  transform: none !important; /* Stays completely in place */
-  border-color: var(--border-color); /* Retains original border */
-  box-shadow: var(--shadow-card-hover); /* Faint soft shadow */
+  box-shadow: var(--shadow-card-hover);
 }
 
 /* Image & Overlay Area */
@@ -279,7 +403,7 @@ img {
   text-transform: uppercase;
 }
 
-/* Details Section inside Card */
+/* Card Body */
 .product-details {
   padding: 1.25rem;
   display: flex;
@@ -306,13 +430,12 @@ img {
   margin: 0.75rem 0;
 }
 
-/* View Specifications Row (Strict Black Color) */
 .view-specifications-row {
   margin: 0.25rem 0;
 }
 
 .specifications-link {
-  color: var(--text-black) !important;
+  color: var(--text-black);
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
@@ -323,7 +446,6 @@ img {
 }
 
 .specifications-link:hover {
-  color: var(--text-black) !important;
   opacity: 0.75;
 }
 
@@ -334,47 +456,31 @@ img {
 }
 
 .product-price {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--text-main);
   margin: 0.5rem 0 1rem 0;
   font-weight: 500;
 }
 
-/* Order Buttons - Sharp 0px Corners */
+/* Single Action Container */
 .product-actions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
+  width: 100%;
   margin-top: auto;
 }
 
-.btn-order-now, 
 .btn-place-order {
-  padding: 0.65rem 0.5rem;
-  font-size: 0.8rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  border-radius: 0px !important; /* Sharp 0px corners */
+  border-radius: 0px;
   cursor: pointer;
-  transition: background-color var(--transition-fast), border-color var(--transition-fast);
-  text-align: center;
-  outline: none;
-}
-
-.btn-order-now {
-  background-color: var(--primary-light);
-  color: var(--primary-color);
-  border: 1px solid rgba(234, 88, 12, 0.4);
-}
-
-.btn-order-now:hover {
-  background-color: rgba(234, 88, 12, 0.18);
-  border-color: var(--primary-color);
-}
-
-.btn-place-order {
   background-color: var(--primary-color);
   color: var(--text-white);
   border: 1px solid var(--primary-color);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+  text-align: center;
+  outline: none;
 }
 
 .btn-place-order:hover {
@@ -404,15 +510,10 @@ img {
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
   .hero-section {
-    grid-template-columns: 1fr;
-    text-align: center;
+    padding-top: calc(var(--header-height) + 20px);
   }
 
   .product-cards-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .product-actions {
     grid-template-columns: 1fr;
   }
 }

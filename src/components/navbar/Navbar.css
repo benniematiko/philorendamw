@@ -1,5 +1,7 @@
-/* Base Header Reset & Fixed Layout */
-.navbar {
+/* ==========================================
+   1. BASE HEADER RESET & FIXED LAYOUT
+   ========================================== */
+/* .navbar {
   position: fixed;
   top: 0;
   left: 0;
@@ -8,21 +10,48 @@
   background-color: #ffffff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+} */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height); /* Should match 80px */
+  z-index: 1000; /* Stays above hero text (z-index: 2) */
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
 }
 
-/* ROW 1: TOP INFO BAR */
+/* Reset margins and paddings across header elements */
+.navbar *,
+.navbar *::before,
+.navbar *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================
+   2. ROW 1: TOP INFO BAR
+   ========================================== */
 .top-bar {
   width: 100%;
   background-color: #f1f5f9;
   border-bottom: 1px solid #e2e8f0;
   transition: all 0.3s ease;
+  margin: 0 !important;
 }
 
 .top-bar-content {
   width: 90%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 22px 0; /* Your target padding */
+  padding: 12px 0; /* Clean vertical padding */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -38,11 +67,11 @@
   gap: 1.5rem;
 }
 
-/* SOCIAL ICONS STYLING */
+/* Social Icons Alignment */
 .social-links {
   display: flex;
   align-items: center;
-  gap: 1rem; /* Uniform gap between icons */
+  gap: 1rem;
 }
 
 .social-links a {
@@ -50,14 +79,16 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px;  /* Forces identical square footprint per icon */
+  width: 28px;
   height: 28px;
+  text-decoration: none !important;
+  border: none !important;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .social-links a:hover {
-  color: #ff7b25; /* Accent amber color on hover */
-  transform: translateY(-2px); /* Slight lift effect */
+  color: #ff7b25;
+  transform: translateY(-2px);
 }
 
 .social-links svg {
@@ -66,71 +97,120 @@
   flex-shrink: 0;
 }
 
-/* ROW 2: MAIN NAVIGATION */
-.main-nav {
-  width: 100%;
-  background-color: #ffffff;
-  border-bottom: 2px solid #e6f0ff;
-}
-
-.main-nav-content {
+/* ==========================================
+   3. ROW 2: MAIN NAVIGATION CONTAINER
+   ========================================== */
+.navbar-container {
   width: 90%;
   max-width: 1400px;
   margin: 0 auto;
-  height: 90px;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #ffffff;
+  position: relative;
 }
 
-/* LOGO STYLING */
-.logo a {
-  text-decoration: none;
+/* BRAND / LOGO STYLING (Stripped of all borders & underlines) */
+.navbar-logo a,
+.navbar-logo a:hover,
+.navbar-logo a:focus {
+  text-decoration: none !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
-.logo-title {
+.logo-main-line {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 800;
   color: #003366;
   line-height: 1;
+  text-decoration: none !important;
+  border: none !important;
 }
 
-.logo-title .dot {
+.accent-dot {
   color: #ff7b25;
+  display: inline-block;
 }
 
-.logo-subtitle {
+.logo-subtext {
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 3px;
   color: #0056b3;
   margin-top: 4px;
+  line-height: 1;
+  text-decoration: none !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  background: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0; /* Clear out any pill/badge padding if present */
+  
+  /* Text Styling */
+
+
+  letter-spacing: 1.5px;
+  color: var(--text-muted); /* Or your preferred text color */
+  display: block;
 }
 
-/* NAV LINKS STYLING */
-.nav-links {
+
+
+
+/* DESKTOP NAV LINKS */
+.navbar-links {
   display: flex;
   gap: 2.5rem;
+  align-items: center;
 }
 
-.nav-links a {
-  text-decoration: none;
+.nav-item {
+  text-decoration: none !important;
   color: #1e293b;
   font-weight: 600;
   font-size: 0.95rem;
   transition: color 0.2s ease;
+  position: relative;
+  padding: 0.5rem 0;
 }
 
-.nav-links a:hover {
+.nav-item:hover {
   color: #0056b3;
 }
 
-/* BUTTON */
-.cta-btn {
-  text-decoration: none;
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ff7b25;
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+/* DESKTOP CTA BUTTON */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+}
+
+.nav-cta-btn {
+  text-decoration: none !important;
   color: #003366;
   border: 2px solid #003366;
   padding: 0.6rem 1.4rem;
@@ -140,18 +220,65 @@
   transition: all 0.3s ease;
 }
 
-.cta-btn:hover {
+.nav-cta-btn:hover {
   background-color: #003366;
   color: #ffffff;
 }
 
-/* SCROLL STATE EFFECTS */
-/* When scrolling down, smoothly hide top bar without crashing page layout */
-.navbar.scrolled .top-bar {
+.nav-cta-mobile {
   display: none;
 }
 
-/* RESPONSIVE DESIGN */
+/* ==========================================
+   4. HAMBURGER ICON BUTTON & BARS
+   ========================================== */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 32px;
+  height: 32px;
+  z-index: 10001; /* Keep above slide drawer */
+  padding: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 2.5px;
+  background-color: #003366;
+  border-radius: 2px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
+  transform-origin: center;
+}
+
+/* ==========================================
+   5. SCROLL STATE EFFECTS
+   ========================================== */
+.navbar-scrolled .top-bar {
+  display: none;
+}
+
+/* BACKDROP OVERLAY FOR MOBILE DRAWER */
+.menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+}
+
+/* ==========================================
+   6. RESPONSIVE DESIGN & SLIDE DRAWER (80% WIDTH)
+   ========================================== */
 @media (max-width: 968px) {
   .top-bar-right {
     display: none;
@@ -159,10 +286,70 @@
 
   .top-bar-content {
     justify-content: center;
-    padding: 14px 0;
+    padding: 10px 0;
   }
 
-  .nav-links, .nav-cta {
-    display: none; /* Add your mobile drawer handling here if needed */
+  .navbar-actions {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Slide-In Drawer from Right to Left (80% Screen Width) */
+  .navbar-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100vh;
+    background: #ffffff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.25);
+    z-index: 10000;
+    transform: translateX(100%); /* Off-screen right */
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 2rem;
+  }
+
+  /* Active State - Slides into 80% Viewport */
+  .navbar-links.active {
+    transform: translateX(0);
+  }
+
+  .nav-item {
+    font-size: 1.25rem;
+    color: #003366;
+  }
+
+  .nav-cta-mobile {
+    display: block;
+    width: 100%;
+    max-width: 240px;
+    text-align: center;
+    background: #ff7b25;
+    color: #ffffff;
+    padding: 1rem;
+    text-decoration: none !important;
+    font-weight: 700;
+    border-radius: 4px;
+    margin-top: 1rem;
+  }
+
+  /* Hamburger Bars -> Animated "X" Cross */
+  .hamburger.toggle .line1 {
+    transform: translateY(8.5px) rotate(45deg);
+  }
+
+  .hamburger.toggle .line2 {
+    opacity: 0;
+  }
+
+  .hamburger.toggle .line3 {
+    transform: translateY(-8.5px) rotate(-45deg);
   }
 }

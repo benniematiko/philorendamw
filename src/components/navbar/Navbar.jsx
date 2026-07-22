@@ -22,8 +22,12 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
-    <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+    <header className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
       {/* ROW 1: TOP INFO BAR */}
       <div className="top-bar">
         <div className="top-bar-content">
@@ -64,49 +68,52 @@ const Navbar = () => {
       </div>
 
       {/* ROW 2: MAIN NAVIGATION */}
-      <div className="main-nav">
-        <div className="main-nav-content">
-          {/* Brand / Logo */}
-          <div className="logo">
-            <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
-              <span className="logo-title">
-                Philorenda Metal Works<span className="dot">.</span>
-              </span>
-              <span className="logo-subtitle">FABRICATION</span>
-            </Link>
-          </div>
-
-          {/* Desktop & Mobile Navigation Links */}
-          <nav className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
-            <Link to="/" className="nav-item" onClick={() => setIsMobileMenuOpen(false)}>
-              Home
-            </Link>
-            <Link to="/products" className="nav-item" onClick={() => setIsMobileMenuOpen(false)}>
-              Our Products
-            </Link>
-            <Link to="/contact" className="nav-cta-mobile" onClick={() => setIsMobileMenuOpen(false)}>
-              Get a Quote
-            </Link>
-          </nav>
-
-          {/* Desktop CTA Button */}
-          <div className="nav-cta">
-            <Link to="/contact" className="cta-btn">
-              Get a Quote
-            </Link>
-          </div>
-
-          {/* Hamburger Menu Button */}
-          <button 
-            className={`hamburger ${isMobileMenuOpen ? 'toggle' : ''}`} 
-            onClick={toggleMobileMenu} 
-            aria-label="Toggle navigation"
-          >
-            <span className="line1"></span>
-            <span className="line2"></span>
-            <span className="line3"></span>
-          </button>
+      <div className="navbar-container">
+        {/* Brand / Logo */}
+        <div className="navbar-logo">
+          <Link to="/" onClick={closeMobileMenu}>
+            <div className="logo-main-line">
+              Philorenda Metal Works<span className="accent-dot">.</span>
+            </div>
+            <span className="logo-subtext">FABRICATION</span>
+          </Link>
         </div>
+
+        {/* Dim Overlay when Drawer is open */}
+        {isMobileMenuOpen && (
+          <div className="menu-backdrop" onClick={closeMobileMenu}></div>
+        )}
+
+        {/* Sliding Navigation Drawer */}
+        <div className={`navbar-links ${isMobileMenuOpen ? 'active' : ''}`}>
+          <Link to="/" className="nav-item" onClick={closeMobileMenu}>
+            Home
+          </Link>
+          <Link to="/products" className="nav-item" onClick={closeMobileMenu}>
+            Our Products
+          </Link>
+          <Link to="/contact" className="nav-cta-mobile" onClick={closeMobileMenu}>
+            Get a Quote
+          </Link>
+        </div>
+
+        {/* Desktop Action CTA */}
+        <div className="navbar-actions">
+          <Link to="/contact" className="nav-cta-btn">
+            Get a Quote
+          </Link>
+        </div>
+
+        {/* Hamburger / Cross Button */}
+        <button 
+          className={`hamburger ${isMobileMenuOpen ? 'toggle' : ''}`} 
+          onClick={toggleMobileMenu} 
+          aria-label="Toggle navigation"
+        >
+          <span className="line1"></span>
+          <span className="line2"></span>
+          <span className="line3"></span>
+        </button>
       </div>
     </header>
   );
