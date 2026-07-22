@@ -50,7 +50,7 @@ const Footer = () => {
           <h4>Facility Logistics</h4>
           <p className="logistics-detail">
             <strong>Headquarters:</strong> <br />
-            Kariobangi Area, Nairobi, Kenya
+            Kariobangi Light Industry, Nairobi, Kenya
           </p>
           <p className="logistics-detail">
             <strong>Inquiries:</strong> <br />
