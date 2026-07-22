@@ -3,36 +3,41 @@ import './Home.css';
 
 // Asset Imports
 import Mixer350 from "../../assets/mixer.png";
-import Sheller from "../../assets/sheller.png";
 import Block from "../../assets/block.png";
 import Block2 from "../../assets/block2.png";
 import Cabros from "../../assets/cabros.png";
 import Colors from "../../assets/colors.png";
 import Culvert from "../../assets/culvert.png";
 import Loover from "../../assets/Loover.png";
-import CulvertMold from "../../assets/culvertmold.png";
 import Paving from "../../assets/paving.png";
 import Table from "../../assets/table.png";
 import FeedMix from "../../assets/feedmix.png";
 import Grill from "../../assets/grill.png";
 import SteelDoor from "../../assets/steeldoor.png"; 
-import SecurityDoor2 from "../../assets/steeldoor1.png"; 
 import Zigzag from "../../assets/zigzag.png"; 
 import Square from "../../assets/square.png"; 
-import ZigzagMold from "../../assets/zigzagcabromold.png"; 
 import Inter from "../../assets/inter.png"; 
 import Road from "../../assets/road.png"; 
-import Shallow from "../../assets/shallow.png"; 
-import VibratingTable from "../../assets/vibratingtable.png";  
-import PostMold10Feet from "../../assets/postmold10feet.png";  
-import PostMold8Feet from "../../assets/postmold8feet.png";  
 import Wheel1 from "../../assets/wheel1.png";  
 import Window from "../../assets/window.png";  
 import Post1 from "../../assets/post.png";  
 import Sideslab from "../../assets/sideslab.png";  
 
+// WhatsApp Icon Component
 
-// Defined outside component to prevent re-creation on every render
+const WhatsAppIcon = () => (
+  <svg 
+    viewBox="0 0 24 24" 
+    xmlns="http://www.w3.org/2000/svg" 
+    className="whatsapp-icon"
+    fill="currentColor"
+  >
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.572-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.414-.075-.124-.277-.198-.574-.347z"/>
+    <path d="M12.045 2.008c-5.516 0-9.984 4.468-9.984 9.984 0 1.764.457 3.424 1.253 4.869L2.045 22.02l5.386-1.414c1.37.744 2.93 1.166 4.614 1.166 5.516 0 9.984-4.468 9.984-9.984s-4.468-9.984-9.984-9.984zm0 18.444c-1.536 0-2.96-.396-4.211-1.084l-3.022.792.807-2.948c-.775-1.355-1.219-2.928-1.219-4.604 0-4.68 3.806-8.486 8.486-8.486s8.486 3.806 8.486 8.486-3.806 8.486-8.486 8.486z"/>
+  </svg>
+);
+
+// Products array with unique ID keys
 const PRODUCTS = [
   { 
     id: "pmw-350l",
@@ -42,143 +47,133 @@ const PRODUCTS = [
     image: Mixer350
   },
   { 
-    id: "pmw-500l",
+    id: "pmw-post-10ft",
     name: "Post Mold 10 feet", 
     detail: "Mold for creating concrete fencing post.",
     price: "Price Available Upon Request",
     image: Post1
   },
   { 
-    id: "pmw-5002",
+    id: "pmw-culvert-900mm",
     name: "Culvert Mold 900mm", 
     detail: "Used for making concrete culverts.",
     price: "Price Available Upon Request",
     image: Culvert
   },
   { 
-    id: "pmw-750l",
+    id: "pmw-loover-9in",
     name: "Loover Vent 9 inches", 
     detail: "Mold for vent.",
     price: "Price Available Upon Request",
     image: Loover
   },
   { 
-    id: "drop-egg-layer",
+    id: "pmw-cabro-cutter",
     name: "Cabro Cutter Machine", 
-    detail: "Used for cutting cabro..",
+    detail: "Used for cutting cabro.",
     price: "Price Available Upon Request",
     image: Cabros
   },
   { 
-    id: "grill-vent",
+    id: "pmw-color-mixer",
     name: "Color Mixer Machine", 
     detail: "Used for mixing paint.",
     price: "Price Available Upon Request",
     image: Colors
   },
   { 
-    id: "interlock-machine",
+    id: "pmw-side-slab-mold",
     name: "Side slab Mold", 
     detail: "Used for making concrete side slabs.",
     price: "Price Available Upon Request",
     image: Sideslab
   },
   { 
-    id: "hydraulic-press",
+    id: "pmw-manual-block-machine",
     name: "Manual Block Making Machine", 
     detail: "Used for making building blocks.",
     price: "Price Available Upon Request",
     image: Block
   },
   { 
-    id: "steel-windows",
+    id: "pmw-paving-slab-mold",
     name: "Paving Slab Mold", 
     detail: "Used for making concrete slabs.",
     price: "Price Available Upon Request",
     image: Paving
   },
   { 
-    id: "burglar-door-single",
+    id: "pmw-vibrating-table",
     name: "Vibrating Table", 
     detail: "Vibrating table.",
     price: "Price Available Upon Request",
     image: Table
   },
   { 
-    id: "shutter-door-double",
+    id: "pmw-zigzag-cabro-mold",
     name: "Zigzag Cabro Mold", 
     detail: "Cabro Mold.",
     price: "Price Available Upon Request",
     image: Zigzag
   },
- 
   { 
-    id: "vibrating-table",
+    id: "pmw-square-cabro-mold",
     name: "Square Cabro mold", 
     detail: "Cabro mold.",
     price: "Price Available Upon Request",
     image: Square
   },
   {
-    id: "cabro-blocks",
+    id: "pmw-block-machine-2",
     name: "Block Making Machine",
     detail: "Manual block making machine.",
     price: "Price Available Upon Request",
     image: Block2
   },
- 
   { 
-    id: "culvert-mold-900",
+    id: "pmw-road-channel-mold",
     name: "Road Channel Mold", 
     detail: "Road channel mold.",
     price: "Price Available Upon Request",
     image: Road
   },
-  // { 
-  //   id: "fencing-post-molds",
-  //   name: "Shallow Drain", 
-  //   detail: "Precision dimension templates engineered to cast crisp, structural load-bearing concrete modules.",
-  //   price: "Price Available Upon Request",
-  //   image: Shallow
-  // },
   {
-    id: "aggregate-crusher",
+    id: "pmw-steel-door",
     name: "Steel Door",
     detail: "Security window",
     price: "Price Available Upon Request",
     image: SteelDoor
   },
   { 
-    id: "maize-sheller",
+    id: "pmw-grill-vent",
     name: "Grill Vent", 
     detail: "Grill vent Mold",
     price: "Price Available Upon Request",
     image: Grill
   },  
-  
   {
-    id: "wheelbarrow",
+    id: "pmw-interlock-machine",
     name: "Interlock Block Machine",
     detail: "Interlocking block making machine",
     price: "Price Available Upon Request",
     image: Inter
   },
   {
-    id: "aggregate-crusher",
+    id: "pmw-aggregate-crusher",
     name: "Tone Gold Aggregate Mechanical Crusher",
     detail: "Diesel feed mixer.",
     price: "Price Available Upon Request",
     image: FeedMix
   },
   {
-    id: "aggregate-crusher",
+    id: "pmw-wheelbarrow",
     name: "Wheel Barrow",
     detail: "Wheel Barrow.",
     price: "Price Available Upon Request",
     image: Wheel1
   },
-   {
-    id: "aggregate-crusher",
+  {
+    id: "pmw-steel-window",
     name: "Steel Window",
     detail: "Security window",
     price: "Price Available Upon Request",
@@ -270,6 +265,7 @@ const Home = () => {
                         className="btn-place-order"
                         onClick={() => handlePlaceOrder(product.name, product.price)}
                       >
+                        <WhatsAppIcon />
                         Order via WhatsApp
                       </button>
                     </div>
