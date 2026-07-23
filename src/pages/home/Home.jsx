@@ -7,7 +7,10 @@ import Bed11 from "../../assets/0011.jpeg";
 import Mould12 from "../../assets/molds__0003.jpg";
 import Mould11 from "../../assets/molds__0002.jpg";
 import Culvert1001 from "../../assets/0012.jpeg";
+
 import WheelBarrow1001 from "../../assets/0013.jpeg";
+import C1001 from "../../assets/1001.jpg";
+import C1002 from "../../assets/1002.jpg";
 import Road1 from "../../assets/road.png";
 import Shallow from "../../assets/shallow.png";
 import VibratingTable from "../../assets/vibratingtable.png";
@@ -63,7 +66,7 @@ const PRODUCTS = [
     image: Bed11 
   },
   { 
-    id: "pmw-35014",
+    id: "pmw-350144",
     name: "Culvert", 
     detail: "Culvert",
     price: "Price Available Upon Request",
@@ -104,6 +107,20 @@ const PRODUCTS = [
     detail: "Heavy-duty steel drum, 1-bag capacity, powered by a high-torque Lister Petter type engine.",
     price: "Price Available Upon Request",
     image: Mixer350
+  },
+  { 
+    id: "pmw-35022",
+    name: "Concrete Mixer Machine 350L", 
+    detail: "Heavy-duty steel drum, 1-bag capacity, powered by a high-torque Lister Petter type engine.",
+    price: "Price Available Upon Request",
+    image: C1001
+  },
+  { 
+    id: "pmw-3502",
+    name: "Concrete Mixer Machine 350L", 
+    detail: "Heavy-duty steel drum, 1-bag capacity, powered by a high-torque Lister Petter type engine.",
+    price: "Price Available Upon Request",
+    image: C1002
   },
   { 
     id: "pmw-post-10ft",
