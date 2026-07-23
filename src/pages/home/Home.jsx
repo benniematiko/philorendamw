@@ -2,6 +2,15 @@ import React from 'react';
 import './Home.css';
 
 // Asset Imports
+
+import Bed11 from "../../assets/0011.jpeg";
+import Mould12 from "../../assets/molds__0003.jpg";
+import Mould11 from "../../assets/molds__0002.jpg";
+import Culvert1001 from "../../assets/0012.jpeg";
+import WheelBarrow1001 from "../../assets/0013.jpeg";
+import Road1 from "../../assets/road.png";
+import Shallow from "../../assets/shallow.png";
+import VibratingTable from "../../assets/vibratingtable.png";
 import Mixer350 from "../../assets/mixer.png";
 import Block from "../../assets/block.png";
 import Block2 from "../../assets/block2.png";
@@ -38,7 +47,57 @@ const WhatsAppIcon = () => (
 );
 
 // Products array with unique ID keys
-const PRODUCTS = [
+const PRODUCTS = [  
+  { 
+    id: "pmw-35016",
+    name: "Manual Brick Making Machine ", 
+    detail: "Manual Brick Making Machine",
+    price: "Price Available Upon Request",
+    image: Mould11
+  },
+  { 
+    id: "pmw-35014",
+    name: "A Bed ", 
+    detail: "A bed",
+    price: "Price Available Upon Request",
+    image: Bed11 
+  },
+  { 
+    id: "pmw-35014",
+    name: "Culvert", 
+    detail: "Culvert",
+    price: "Price Available Upon Request",
+    image: Culvert1001
+  },
+
+  { 
+    id: "pmw-3511",
+    name: "Wheel Barrow ", 
+    detail: "Wheel Barrow",
+    price: "Price Available Upon Request",
+    image: WheelBarrow1001
+  },
+  { 
+    id: "pmw-35012",
+    name: "Road Side Blocks", 
+    detail: "Road Side Blocks",
+    price: "Price Available Upon Request",
+    image: Road1
+  },
+  { 
+    id: "pmw-35013",
+    name: "Shalow", 
+    detail: "A shallow",
+    price: "Price Available Upon Request",
+    image: Shallow
+  },
+  { 
+    id: "pmw-3505",
+    name: "Vibrating Table", 
+    detail: "Vibrating Table.",
+    price: "Price Available Upon Request",
+    image: VibratingTable
+  },
   { 
     id: "pmw-350l",
     name: "Concrete Mixer Machine 350L", 
