@@ -19,7 +19,7 @@ import Mould12 from "../../assets/molds__0003.jpg";
 import Mould11 from "../../assets/molds__0002.jpg";
 import Culvert1001 from "../../assets/0012.jpeg";
 
-import WheelBarrow1001 from "../../assets/0013.jpeg";
+
 import C1001 from "../../assets/1001.jpg";
 import C1002 from "../../assets/1002.jpg";
 import Road1 from "../../assets/road.png";
@@ -161,13 +161,7 @@ const PRODUCTS = [
     image: Culvert1001
   },
 
-  { 
-    id: "pmw-3511",
-    name: "Wheel Barrow ", 
-    detail: "Wheel Barrow",
-    price: "Price Available Upon Request",
-    image: WheelBarrow1001
-  },
+  
   { 
     id: "pmw-35012",
     name: "Road Side Blocks", 
