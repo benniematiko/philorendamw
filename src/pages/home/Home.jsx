@@ -3,6 +3,8 @@ import './Home.css';
 
 // Asset Imports
 
+import C1020 from "../../assets/1020.jpg";
+import C1003 from "../../assets/1003.jpg";
 import Wheels__Barrows__Many from "../../assets/wheels__barrows__many.jpeg";
 import Color__Mixer from "../../assets/color__mixer.jpeg";
 import Cabro__Block from "../../assets/cabro__block.jpeg";
@@ -62,6 +64,20 @@ const WhatsAppIcon = () => (
 
 // Products array with unique ID keys
 const PRODUCTS = [  
+  { 
+    id: "pmw-35030",
+    name: "Product PMW1020", 
+    detail: "Products PMW1020",
+    price: "Price Available Upon Request",
+    image: C1020
+  },
+  { 
+    id: "pmw-35029",
+    name: "Product PMW1003", 
+    detail: "Products PMW1003",
+    price: "Price Available Upon Request",
+    image: C1003
+  },
   { 
     id: "pmw-35028",
     name: "Wheel Barrows", 
