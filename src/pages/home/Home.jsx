@@ -3,6 +3,8 @@ import './Home.css';
 
 // Asset Imports
 
+import Wheels__Barrows__Many from "../../assets/wheels__barrows__many.jpeg";
+import Color__Mixer from "../../assets/color__mixer.jpeg";
 import Cabro__Block from "../../assets/cabro__block.jpeg";
 import Secular__Table__Saw from "../../assets/secular__table__saw.jpeg";
 import Silage__Chopper from "../../assets/silage__chopper.jpeg";
@@ -60,6 +62,20 @@ const WhatsAppIcon = () => (
 
 // Products array with unique ID keys
 const PRODUCTS = [  
+  { 
+    id: "pmw-35028",
+    name: "Wheel Barrows", 
+    detail: "Wheels Barrows Many",
+    price: "Price Available Upon Request",
+    image: Wheels__Barrows__Many
+  },
+  { 
+    id: "pmw-35027",
+    name: "Color Mixer", 
+    detail: "Color Mixer",
+    price: "Price Available Upon Request",
+    image: Color__Mixer 
+  },
   { 
     id: "pmw-35026",
     name: "Cabro Block", 
