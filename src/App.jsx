@@ -8,7 +8,7 @@ import Footer from './components/footer/Footer';
 // 2. Import your page views from the pages folder
 import Home from './pages/home/Home';
 // import Capabilities from './pages/capabilities/Capabilities';
-// import Products from './pages/products/Products';
+import Products from './pages/products/Products';
 // import About from './pages/about/About';
 // import Contact from './pages/contact/Contact';
 
@@ -22,7 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/capabilities" element={<Capabilities />} /> */}
-        {/* <Route path="/products" element={<Products />} /> */}
+         <Route path="/products" element={<Products />} /> 
         {/* <Route path="/about" element={<About />} />  */}
         {/* <Route path="/contact" element={<Contact />} /> */}
       </Routes>

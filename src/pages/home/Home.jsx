@@ -3,6 +3,7 @@ import './Home.css';
 
 // Asset Imports
 
+import C1034 from "../../assets/1034.jpg";
 import C1020 from "../../assets/1020.jpg";
 import C1003 from "../../assets/1003.jpg";
 import Wheels__Barrows__Many from "../../assets/wheels__barrows__many.jpeg";
@@ -65,6 +66,13 @@ const WhatsAppIcon = () => (
 // Products array with unique ID keys
 const PRODUCTS = [  
   { 
+    id: "pmw-35050",
+    name: "Product PMW1034", 
+    detail: "Products PMW1034",
+    price: "Price Available Upon Request",
+    image: C1034
+  },
+  { 
     id: "pmw-35030",
     name: "Product PMW1020", 
     detail: "Products PMW1020",
@@ -121,7 +129,7 @@ const PRODUCTS = [
     image: Pillar__column
   },
   { 
-    id: "pmw-35022",
+    id: "pmw-35060",
     name: "Road Cubes", 
     detail: "Road Cubes",
     price: "Price Available Upon Request",

@@ -1,0 +1,320 @@
+/* ==========================================================================
+   Products.css - Catalog Page Styling for Philorenda Metal Works
+   ========================================================================== */
+
+.products-page {
+  background-color: var(--bg-catalog, #f8fafc);
+  min-height: 100vh;
+  padding-bottom: 5rem;
+}
+
+.products-container {
+  width: 100%;
+  max-width: var(--container-max-width, 1280px);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --------------------------------------------------------------------------
+   1. Banner Header
+   -------------------------------------------------------------------------- */
+.products-banner {
+  background-color: var(--bg-dark-footer, #0a0f1d);
+  color: #ffffff;
+  padding: 100px 24px 50px 24px;
+  text-align: center;
+  border-bottom: 3px solid var(--primary-color, #ea580c);
+}
+
+.products-banner-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.banner-tagline {
+  color: var(--primary-color, #ea580c);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.banner-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0.5rem 0 1rem 0;
+  color: #ffffff;
+}
+
+.banner-subtitle {
+  color: #94a3b8;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   2. Controls (Search & Category Tabs)
+   -------------------------------------------------------------------------- */
+.products-controls-section {
+  background: #ffffff;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.products-filter-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+/* Search Bar */
+.search-bar-box {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  width: 20px;
+  height: 20px;
+  color: #64748b;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 2.75rem;
+  font-size: 0.95rem;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 4px;
+  outline: none;
+  background-color: #f8fafc;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.search-input:focus {
+  border-color: var(--primary-color, #ea580c);
+  background-color: #ffffff;
+}
+
+.search-clear-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #64748b;
+  cursor: pointer;
+}
+
+/* Category Buttons */
+.category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.category-tab-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.category-tab-btn:hover {
+  background: #e2e8f0;
+}
+
+.category-tab-btn.active {
+  background: var(--primary-color, #ea580c);
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   3. Product Grid & Display Status
+   -------------------------------------------------------------------------- */
+.products-grid-section {
+  padding-top: 2rem;
+}
+
+.catalog-status-bar {
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* --------------------------------------------------------------------------
+   4. Refined Actions Area & Interactive Phone Reveal Call Button
+   -------------------------------------------------------------------------- */
+.product-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: auto;
+  align-items: center;
+}
+
+/* Compact "Order Now" Call Button with Phone Reveal Hover */
+.btn-order-now {
+  position: relative;
+  width: auto;
+  min-width: 150px;
+  height: 32px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: var(--primary-color, #ea580c);
+  color: #ffffff;
+  border: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.2);
+  overflow: hidden;
+}
+
+/* Base button text styling */
+.btn-order-now .btn-text {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+/* Phone number reveal on hover */
+.btn-order-now::after {
+  content: attr(data-phone);
+  position: absolute;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+/* Hover & Focus States */
+.btn-order-now:hover {
+  background-color: var(--primary-hover, #c2410c);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.35);
+  min-width: 165px;
+}
+
+.btn-order-now:hover .btn-text {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.btn-order-now:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-order-now:active {
+  transform: translateY(0);
+}
+
+.phone-icon {
+  width: 13px;
+  height: 13px;
+  fill: currentColor;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+/* WhatsApp Primary Action Button */
+.btn-place-order {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: var(--btn-dark-bg, #0f172a);
+  color: #ffffff;
+  border: 1px solid var(--btn-dark-hover, #1e293b);
+  transition: all 0.2s ease;
+  text-align: center;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-place-order:hover {
+  background-color: var(--btn-dark-hover, #1e293b);
+  border-color: var(--primary-color, #ea580c);
+}
+
+.btn-place-order:active {
+  transform: scale(0.98);
+}
+
+/* --------------------------------------------------------------------------
+   5. No Products Fallback
+   -------------------------------------------------------------------------- */
+.no-products-found {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: #ffffff;
+  border: 1px dashed var(--border-color, #e2e8f0);
+  margin-top: 1rem;
+}
+
+.no-products-found h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-main, #0f172a);
+}
+
+.no-products-found p {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.reset-filter-btn {
+  padding: 0.6rem 1.2rem;
+  background-color: var(--primary-color, #ea580c);
+  color: #ffffff;
+  border: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .products-banner {
+    padding-top: 80px;
+  }
+  
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
