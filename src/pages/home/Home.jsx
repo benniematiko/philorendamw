@@ -3,6 +3,11 @@ import './Home.css';
 
 // Asset Imports
 
+import Cabro__Block from "../../assets/cabro__block.jpeg";
+import Secular__Table__Saw from "../../assets/secular__table__saw.jpeg";
+import Silage__Chopper from "../../assets/silage__chopper.jpeg";
+import Pillar__column from "../../assets/pillar__column.jpeg";
+import Road__Cubes from "../../assets/road__cubes.jpeg";
 import Fencing__Post from "../../assets/fencing__post.jpeg";
 import Road__Curb from "../../assets/road__curb.jpeg";
 import Plastic__Cabro__Mould from "../../assets/plastic__cabro__mould.jpeg";
@@ -55,6 +60,41 @@ const WhatsAppIcon = () => (
 
 // Products array with unique ID keys
 const PRODUCTS = [  
+  { 
+    id: "pmw-35026",
+    name: "Cabro Block", 
+    detail: "Cabro Block ",
+    price: "Price Available Upon Request",
+    image: Cabro__Block 
+  },
+  { 
+    id: "pmw-35025",
+    name: "Secular Table Saw ", 
+    detail: "Secular Table Saw ",
+    price: "Price Available Upon Request",
+    image: Secular__Table__Saw 
+  },
+  { 
+    id: "pmw-35024",
+    name: "Silage Chopper", 
+    detail: "Silage Chopper",
+    price: "Price Available Upon Request",
+    image: Silage__Chopper
+  },
+  { 
+    id: "pmw-35023",
+    name: "Pillar Column", 
+    detail: "Pillar column",
+    price: "Price Available Upon Request",
+    image: Pillar__column
+  },
+  { 
+    id: "pmw-35022",
+    name: "Road Cubes", 
+    detail: "Road Cubes",
+    price: "Price Available Upon Request",
+    image: Road__Cubes
+  },
   { 
     id: "pmw-35021",
     name: "Fencing Post", 
