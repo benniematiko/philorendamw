@@ -160,7 +160,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   4. Refined Actions Area & Interactive Phone Reveal Call Button
+   4. Refined Actions Area & Action Buttons
    -------------------------------------------------------------------------- */
 .product-actions {
   display: flex;
@@ -246,7 +246,7 @@
   z-index: 1;
 }
 
-/* WhatsApp Primary Action Button */
+/* WhatsApp Action Button - Matching Home.jsx styling */
 .btn-place-order {
   width: 100%;
   padding: 0.6rem 0.75rem;
@@ -254,9 +254,9 @@
   font-weight: 700;
   border-radius: 4px;
   cursor: pointer;
-  background-color: var(--btn-dark-bg, #0f172a);
+  background-color: #25d366;
   color: #ffffff;
-  border: 1px solid var(--btn-dark-hover, #1e293b);
+  border: 1px solid #20bd5a;
   transition: all 0.2s ease;
   text-align: center;
   outline: none;
@@ -264,15 +264,25 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+  box-shadow: 0 2px 6px rgba(37, 211, 102, 0.2);
 }
 
 .btn-place-order:hover {
-  background-color: var(--btn-dark-hover, #1e293b);
-  border-color: var(--primary-color, #ea580c);
+  background-color: #20bd5a;
+  border-color: #1da850;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.35);
 }
 
 .btn-place-order:active {
-  transform: scale(0.98);
+  transform: translateY(0);
+}
+
+.whatsapp-icon {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+  flex-shrink: 0;
 }
 
 /* --------------------------------------------------------------------------
