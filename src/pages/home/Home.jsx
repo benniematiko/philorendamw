@@ -3,6 +3,10 @@ import './Home.css';
 
 // Asset Imports
 
+import Fencing__Post from "../../assets/fencing__post.jpeg";
+import Road__Curb from "../../assets/road__curb.jpeg";
+import Plastic__Cabro__Mould from "../../assets/plastic__cabro__mould.jpeg";
+import IBD from "../../assets/ibd.jpeg";
 import Bed11 from "../../assets/0011.jpeg";
 import Mould12 from "../../assets/molds__0003.jpg";
 import Mould11 from "../../assets/molds__0002.jpg";
@@ -51,6 +55,34 @@ const WhatsAppIcon = () => (
 
 // Products array with unique ID keys
 const PRODUCTS = [  
+  { 
+    id: "pmw-35021",
+    name: "Fencing Post", 
+    detail: "Fencing Post",
+    price: "Price Available Upon Request",
+    image: Fencing__Post
+  },
+  { 
+    id: "pmw-35020",
+    name: "Road Curb", 
+    detail: "Road Curb",
+    price: "Price Available Upon Request",
+    image: Road__Curb
+  },
+  { 
+    id: "pmw-35019",
+    name: "Plastic Cabro Mould", 
+    detail: "Plastic Cabro Mould",
+    price: "Price Available Upon Request",
+    image: Plastic__Cabro__Mould
+  },
+  { 
+    id: "pmw-35018",
+    name: "IBD", 
+    detail: "IBD",
+    price: "Price Available Upon Request",
+    image: IBD
+  },
   { 
     id: "pmw-35016",
     name: "Manual Brick Making Machine ", 
