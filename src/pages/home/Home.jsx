@@ -5,6 +5,7 @@ import './Home.css';
 
 
 
+import DigesterMould from "../../assets/digestermould.jpeg";
 import BlockManual1001 from "../../assets/blockmanual1001.jpeg";
 import PanMixer from "../../assets/pan__mixer.jpeg";
 import C1034 from "../../assets/1034.jpg";
@@ -69,6 +70,13 @@ const WhatsAppIcon = () => (
 
 // Products array with unique ID keys
 const PRODUCTS = [  
+  { 
+    id: "pmw-35053",
+    name: "Digester Mould", 
+    detail: "Digester Mould",
+    price: "Price Available Upon Request",
+    image: DigesterMould
+  },
   { 
     id: "pmw-35052",
     name: "Block Manual", 
