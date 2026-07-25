@@ -3,6 +3,9 @@ import './Home.css';
 
 // Asset Imports
 
+
+
+import BlockManual1001 from "../../assets/blockmanual1001.jpeg";
 import PanMixer from "../../assets/pan__mixer.jpeg";
 import C1034 from "../../assets/1034.jpg";
 import C1020 from "../../assets/1020.jpg";
@@ -66,6 +69,13 @@ const WhatsAppIcon = () => (
 
 // Products array with unique ID keys
 const PRODUCTS = [  
+  { 
+    id: "pmw-35052",
+    name: "Block Manual", 
+    detail: "Block Manual",
+    price: "Price Available Upon Request",
+    image: BlockManual1001
+  },
   { 
     id: "pmw-35051",
     name: "Pan Mixer", 
