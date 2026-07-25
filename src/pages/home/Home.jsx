@@ -3,6 +3,7 @@ import './Home.css';
 
 // Asset Imports
 
+import PanMixer from "../../assets/pan__mixer.jpeg";
 import C1034 from "../../assets/1034.jpg";
 import C1020 from "../../assets/1020.jpg";
 import C1003 from "../../assets/1003.jpg";
@@ -66,19 +67,20 @@ const WhatsAppIcon = () => (
 // Products array with unique ID keys
 const PRODUCTS = [  
   { 
+    id: "pmw-35051",
+    name: "Pan Mixer", 
+    detail: "Pan Mixer",
+    price: "Price Available Upon Request",
+    image: PanMixer
+  },
+  { 
     id: "pmw-35050",
-    name: "Product PMW1034", 
-    detail: "Products PMW1034",
+    name: "Block Master", 
+    detail: "Block Master",
     price: "Price Available Upon Request",
     image: C1034
   },
-  { 
-    id: "pmw-35030",
-    name: "Product PMW1020", 
-    detail: "Products PMW1020",
-    price: "Price Available Upon Request",
-    image: C1020
-  },
+  
   { 
     id: "pmw-35029",
     name: "Product PMW1003", 
@@ -102,8 +104,8 @@ const PRODUCTS = [
   },
   { 
     id: "pmw-35026",
-    name: "Cabro Block", 
-    detail: "Cabro Block ",
+    name: "Cabro Blocks", 
+    detail: "Cabro Blocks",
     price: "Price Available Upon Request",
     image: Cabro__Block 
   },
@@ -165,8 +167,8 @@ const PRODUCTS = [
   },
   { 
     id: "pmw-35016",
-    name: "Manual Brick Making Machine ", 
-    detail: "Manual Brick Making Machine",
+    name: "Interlocking Machine", 
+    detail: "Interlocking Machine",
     price: "Price Available Upon Request",
     image: Mould11
   },
@@ -216,15 +218,15 @@ const PRODUCTS = [
   },
   { 
     id: "pmw-35022",
-    name: "Concrete Mixer Machine 350L", 
-    detail: "Heavy-duty steel drum, 1-bag capacity, powered by a high-torque Lister Petter type engine.",
+    name: "Culvert Mould", 
+    detail: "Culvert Mould",
     price: "Price Available Upon Request",
     image: C1001
   },
   { 
     id: "pmw-3502",
-    name: "Concrete Mixer Machine 350L", 
-    detail: "Heavy-duty steel drum, 1-bag capacity, powered by a high-torque Lister Petter type engine.",
+    name: "Vibrating Table Caborn Block", 
+    detail: "Vibrating Table Caborn Block",
     price: "Price Available Upon Request",
     image: C1002
   },
@@ -244,8 +246,8 @@ const PRODUCTS = [
   },
   { 
     id: "pmw-loover-9in",
-    name: "Loover Vent 9 inches", 
-    detail: "Mold for vent.",
+    name: "Loover Block", 
+    detail: "Loover Block",
     price: "Price Available Upon Request",
     image: Loover
   },
@@ -265,8 +267,8 @@ const PRODUCTS = [
   },
   { 
     id: "pmw-side-slab-mold",
-    name: "Side slab Mold", 
-    detail: "Used for making concrete side slabs.",
+    name: "Wall Block", 
+    detail: "Wall Block",
     price: "Price Available Upon Request",
     image: Sideslab
   },
@@ -328,8 +330,8 @@ const PRODUCTS = [
   },
   { 
     id: "pmw-grill-vent",
-    name: "Grill Vent", 
-    detail: "Grill vent Mold",
+    name: "Vent", 
+    detail: "Vent Mold",
     price: "Price Available Upon Request",
     image: Grill
   },  
